@@ -37,5 +37,5 @@ jobs:
 
       - name: Start ngrok tunnel
         run: |
-          .\ngrok-v3-stable-windows-amd64\ngrok.exe tcp 3389
+          Start-Process -NoNewWindow -FilePath ".\ngrok-v3-stable-windows-amd64\ngrok.exe" -ArgumentList "tcp 3389"
           Write-Output "$((Invoke-RestMethod -Uri http://127.0.0.1:4040/api/tunnels).tunnels[0].public_url)"
