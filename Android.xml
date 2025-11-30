@@ -29,7 +29,11 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    .line 31
+    .line 30
+    const-string v0, "pairipcorex"
+
+    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+
     const-string v0, "pairipcore"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
