@@ -5,8 +5,6 @@
     android:versionName="1.3.26"
     android:compileSdkVersion="36"
     android:compileSdkVersionCodename="16"
-    android:requiredSplitTypes="base__abi,base__density"
-    android:splitTypes=""
     package="org.nssa_sube.android"
     platformBuildVersionCode="36"
     platformBuildVersionName="16">
@@ -18,10 +16,10 @@
             android:name="com.google.android.apps.maps" />
     </queries>
     <permission
-        android:label="@7f120300"
+        android:label="@string/trip_service_perm_label"
         android:name="org.nssa_sube.android.permission.TRIP_SERVICE"
         android:protectionLevel="normal"
-        android:description="@7f1202ff" />
+        android:description="@string/trip_service_perm_description" />
     <!-- Have full internet access -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- Allows an app to access approximate location (network-based). -->
@@ -66,24 +64,24 @@
         android:protectionLevel="signature" />
     <uses-permission android:name="org.nssa_sube.android.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
     <application
-        android:theme="@7f1301c9"
-        android:label="@7f12007c"
+        android:theme="@style/Theme.OneBusAway"
+        android:label="@string/app_name"
         android:icon="@7f0e0000"
         android:name="com.pairip.application.Application"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
-        android:extractNativeLibs="false"
+        android:extractNativeLibs="true"
         android:usesCleartextTraffic="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory">
         <activity
-            android:theme="@7f1301cb"
-            android:label="@7f12007c"
+            android:theme="@style/Theme.OneBusAway.NoActionBar"
+            android:label="@string/app_name"
             android:icon="@7f0e0000"
             android:name="org.onebusaway.android.LocationRequest"
             android:logo="@7f0e0000" />
         <activity
-            android:theme="@7f1301cb"
-            android:label="@7f12007c"
+            android:theme="@style/Theme.OneBusAway.NoActionBar"
+            android:label="@string/app_name"
             android:icon="@7f0e0000"
             android:name="org.onebusaway.android.SplashScreen"
             android:exported="true"
@@ -108,7 +106,7 @@
             </intent-filter>
             <meta-data
                 android:name="android.app.searchable"
-                android:resource="@7f150003" />
+                android:resource="@xml/searchable" />
         </activity>
         <activity
             android:name="org.onebusaway.android.ui.HomeActivity" />
@@ -167,7 +165,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="@7f1202ad"
+            android:label="@string/stop_shortcut"
             android:name="org.onebusaway.android.ui.MyStopsActivity"
             android:exported="false">
             <intent-filter>
@@ -178,7 +176,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="@7f1202ad"
+            android:label="@string/stop_shortcut"
             android:name="com.joulespersecond.seattlebusbot.MyStopsActivity"
             android:exported="false">
             <intent-filter>
@@ -187,7 +185,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="@7f1201d5"
+            android:label="@string/recent_stops_shortcut"
             android:name="org.onebusaway.android.ui.MyRecentStopsActivity"
             android:exported="false">
             <intent-filter>
@@ -198,7 +196,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="@7f120241"
+            android:label="@string/starred_stops_shortcut"
             android:name="org.onebusaway.android.ui.MyStarredStopsActivity"
             android:exported="false">
             <intent-filter>
@@ -229,7 +227,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="@7f1201d4"
+            android:label="@string/recent_routes_shortcut"
             android:name="org.onebusaway.android.ui.MyRecentRoutesActivity"
             android:exported="false">
             <intent-filter>
@@ -255,7 +253,7 @@
         <activity
             android:name="org.onebusaway.android.report.ui.InfrastructureIssueActivity" />
         <activity
-            android:label="@7f120131"
+            android:label="@string/my_recent_title"
             android:name="org.onebusaway.android.ui.MyRecentStopsAndRoutesActivity"
             android:exported="false"
             android:parentActivityName="org.onebusaway.android.ui.HomeActivity">
@@ -270,7 +268,7 @@
                 android:value="org.onebusaway.android.ui.HomeActivity" />
         </activity>
         <activity
-            android:label="@7f12029a"
+            android:label="@string/stop_info_option_night_light"
             android:name="org.onebusaway.android.ui.NightLightActivity"
             android:exported="false"
             android:screenOrientation="portrait"
@@ -287,7 +285,7 @@
                 android:value="org.onebusaway.android.ui.HomeActivity" />
         </activity>
         <activity
-            android:label="@7f1202c8"
+            android:label="@string/title_activity_trip_plan"
             android:name="org.onebusaway.android.ui.TripPlanActivity"
             android:parentActivityName="org.onebusaway.android.ui.HomeActivity">
             <meta-data
@@ -372,10 +370,10 @@
             android:value="@7f0a000a" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@7f12007b" />
+            android:value="@string/apiv2_key" />
         <activity
-            android:theme="@7f1301cb"
-            android:label="@7f1202c6"
+            android:theme="@style/Theme.OneBusAway.NoActionBar"
+            android:label="@string/title_activity_about"
             android:name="org.onebusaway.android.ui.AboutActivity"
             android:parentActivityName="org.onebusaway.android.ui.PreferencesActivity">
             <meta-data
